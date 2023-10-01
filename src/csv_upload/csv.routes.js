@@ -13,6 +13,6 @@ csvRouter.post(
   uploadFile.single("csvFile"),
   csvController.uploadFile
 );
-csvRouter.get("/single/:id", csvController.showSingleFile);
+csvRouter.get("/single/:filename", csvController.showSingleFile);
 
 export default csvRouter;
