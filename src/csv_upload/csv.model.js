@@ -11,6 +11,4 @@ export default class CsvModel {
   static uploadFile(uploadedFile) {
     allCsvFiles.push(uploadedFile);
   }
-
-  static displayFileData() {}
 }
