@@ -13,30 +13,35 @@
       crossorigin="anonymous"
     />
 
-    <title>Upload CSV</title>
+    <title>File List</title>
   </head>
   <body>
-    <h1 style="margin: 50px 550px">MyCSV</h1>
+    <h1 style="margin-top: 25px; margin-left: 420px">All Uploaded CSV Files</h1>
 
-    <form
-      action="/csv/upload"
-      method="post"
-      style="margin: 150px 450px"
-      enctype="multipart/form-data"
+    <table
+      class="table"
+      style="width: 50%; margin-left: 300px; margin-top: 100px"
     >
-      <div class="mb-3">
-        <label for="imageUrl" class="form-label">CSV File</label>
-        <input type="file" name="csvFile" id="csvFile" accept=".csv" />
-      </div>
-      <button type="submit" class="btn btn-primary">Upload File</button>
-    </form>
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <a href="/csv/all"
-        ><button class="btn btn-primary" type="button">
-          Show All Files
-        </button></a
-      >
-    </div>
+      <thead>
+        <tr>
+          <th scope="col">FileName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%for (let i = 0; i < csvFiles.length; i++){%>
+        <tr>
+          <td><%= csvFiles[i] %></td>
+          <td>
+            <a href="/csv/single/<%= csvFiles[i] %>"
+              ><button type="submit" class="btn btn-primary">
+                Show Data
+              </button></a
+            >
+          </td>
+        </tr>
+        <%}%>
+      </tbody>
+    </table>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
