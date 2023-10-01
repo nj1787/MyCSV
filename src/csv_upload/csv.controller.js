@@ -5,6 +5,10 @@ export default class CsvController {
     this.csvModel = new CsvModel();
   }
 
+  homepage(req, res) {
+    res.render("home");
+  }
+
   showAllFiles(req, res) {
     console.log("Inside Show All Controller");
     res.status(200).end("<h1>Displaying All Uploaded Files</h1>");
@@ -12,7 +16,7 @@ export default class CsvController {
 
   uploadFile(req, res) {
     console.log("Inside Upload File Controller");
-    res.status(201).end("<h1>Uploaded File Successfully</h1>");
+    res.redirect("/csv");
   }
 
   showSingleFile(req, res) {

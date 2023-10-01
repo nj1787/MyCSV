@@ -8,7 +8,7 @@ export default class CsvModel {
     return allCsvFiles;
   }
 
-  static uploadFile() {}
+  static uploadFile(fileName) {}
 
   static displayFileData() {}
 }

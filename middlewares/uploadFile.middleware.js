@@ -2,7 +2,7 @@ import multer from "multer";
 
 const storageConfig = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "public/uploaded_files");
+    cb(null, "public/uploaded_files/");
   },
   filename: (req, file, cb) => {
     const name = Date.now() + "-" + file.originalname;
@@ -10,6 +10,6 @@ const storageConfig = multer.diskStorage({
   },
 });
 
-export const file = multer({
+export const uploadFile = multer({
   storage: storageConfig,
 });
