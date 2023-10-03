@@ -1,0 +1,7 @@
+[build]
+command = "npm install && npm run build" # Replace with your build script if necessary
+publish = "public" # The directory where your built assets will be
+functions = "netlify/functions" # If you have serverless functions
+
+[build.environment]
+NODE_VERSION = "16" # Specify the Node.js version you're using
